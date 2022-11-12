@@ -12,14 +12,14 @@ export class SearchPokemonComponent implements OnInit {
 
   searchTerms = new Subject<string>();
   pokemons$: Observable<Pokemon[]>;
-  
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   search(term: string) {
-
+    this.searchTerms.next(term);
   }
 
   goToDetail(pokemon: Pokemon) {

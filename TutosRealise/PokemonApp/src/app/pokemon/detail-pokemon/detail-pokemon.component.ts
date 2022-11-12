@@ -25,7 +25,11 @@ export class DetailPokemonComponent implements OnInit {
     }
   }
 
-  goBackToPokemonList() {
+  deletePokemon(pokemon: Pokemon) {
+    this.pokemonService.deletePokemon(pokemon.id).subscribe(() => this.goToPokemonList());
+  }
+
+  goToPokemonList() {
     this.router.navigate(['/pokemons']);
   }
 
